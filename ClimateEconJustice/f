@@ -1,0 +1,48 @@
+for(StateNode state = firstState; state != null; state = state.getNext()) {
+            for(CountyNode county = state.getDown(); county != null; county = county.getNext()) {
+                for(CommunityNode community = county.getDown(); community!= null; community = community.getNext()) {
+                    if(race.equals("African American") && (community.info.getPrcntAfricanAmerican() * 100 >= userPrcntage) && (community.info.getAdvantageStatus().equals("True"))) {
+                        ctr++;
+                    }
+                    else if(race.equals("Native American") && (community.getInfo().getPrcntNative() * 100 >= userPrcntage) && (community.getInfo().getAdvantageStatus().equals("True"))) {
+                        ctr++;
+                    }
+                    else if(race.equals("Asian American") && (community.getInfo().getPrcntAsian() * 100 >= userPrcntage) && (community.getInfo().getAdvantageStatus().equals("True"))) {
+                        ctr++;
+                    }
+                    else if(race.equals("White American") && (community.getInfo().getPrcntWhite() * 100 >= userPrcntage) && (community.getInfo().getAdvantageStatus().equals("True"))) {
+                        ctr++;
+                    }
+                    else if(race.equals("Hispanic American") && (community.getInfo().getPrcntHispanic() * 100 >= userPrcntage) && (community.getInfo().getAdvantageStatus().equals("True"))) {
+                        ctr++;
+                    }
+                    
+                }
+                
+                
+            }
+        }
+
+
+        for (StateNode state = firstState; state != null; state = state.getNext()) {
+            for (CountyNode county = state.getDown(); county != null; county = county.getNext()) {
+                for (CommunityNode community = county.getDown(); community != null; community = community.getNext()) {
+                    // Check if the community has a pollution level meeting the threshold
+                    if(community.getInfo().getPMlevel() >= PMlevel) {
+                        if(states.size() != 0) {
+                            if(!states.contains(state)) {
+                                states.add(state);
+                            }
+                        }
+                        else {
+                            states.add(state);
+                        }
+                    }
+                        
+                    
+                        
+                }
+                
+            }
+            
+        }
